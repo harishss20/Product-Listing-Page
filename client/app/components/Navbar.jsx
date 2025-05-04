@@ -30,11 +30,11 @@ function Navbar() {
         </div>
       </div>
       <div className="flex pt-10 gap-14 font-bold w-11/12 ml-16 justify-center items-center text-black">
-        <h2>SHOP</h2>
-        <h2>SKILLS</h2>
-        <h2>STORIES</h2>
-        <h2>ABOUT</h2>
-        <h2>CONTACT US</h2>
+        <button className="cursor-pointer">SHOP</button>
+        <button className="cursor-pointer">SKILLS</button>
+        <button className="cursor-pointer">STORIES</button>
+        <button className="cursor-pointer">ABOUT</button>
+        <button className="cursor-pointer">CONTACT US</button>
       </div>
     </div>
   );
