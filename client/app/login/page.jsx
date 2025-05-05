@@ -12,17 +12,21 @@ function LoginPage() {
 
     const token = await getLogin(user, password);
     if (token) {
-      router.replace("/");
+      localStorage.setItem("token", token);
       toast.success("Login is success");
+      router.replace("/");
     } else {
-      setError("Invalid username or password");
+      toast.error("Invalid username or password");
     }
   };
 
   return (
     <div className="flex min-h-screen justify-center items-center flex-col text-black">
       <h1 className="text-2xl font-bold mb-4">Login</h1>
-      <form className="flex flex-col p-4 w-full max-w-xs border rounded">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col p-4 w-full max-w-xs border rounded"
+      >
         <label htmlFor="username">User Name</label>
         <input
           type="text"
