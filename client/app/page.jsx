@@ -1,16 +1,46 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Products from "./components/Products";
-function page() {
+import ProductList from "./components/ProductList";
+import { ClipLoader } from "react-spinners";
+import Footer from "./components/Footer";
+function Page() {
+  const [token, setToken] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+
+  useEffect(() => {
+    const savedToken = localStorage.getItem("token");
+    if (!savedToken) {
+      router.replace("/login");
+    } else {
+      setToken(savedToken);
+      setLoading(false);
+    }
+  }, [router]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <ClipLoader size={50} color="#123abc" />
+      </div>
+    );
+  }
+
   return (
     <div>
       <Navbar />
       <Hero />
-      <hr />
-      <Products />
+      <div className="flex lg:flex-row">
+        <Products />
+        <ProductList />
+      </div>
+      <Footer />
     </div>
   );
 }
 
-export default page;
+export default Page;

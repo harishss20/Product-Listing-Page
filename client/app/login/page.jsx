@@ -22,10 +22,7 @@ function LoginPage() {
   return (
     <div className="flex min-h-screen justify-center items-center flex-col text-black">
       <h1 className="text-2xl font-bold mb-4">Login</h1>
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col p-4 w-80 border rounded"
-      >
+      <form className="flex flex-col p-4 w-full max-w-xs border rounded">
         <label htmlFor="username">User Name</label>
         <input
           type="text"

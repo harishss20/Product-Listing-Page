@@ -4,7 +4,7 @@ import { Search, Heart, Backpack, User } from "lucide-react";
 function Navbar() {
   return (
     <div className="w-full py-6  px-20 bg-white shadow-sm">
-      <div className="flex items-center justify-between text-black">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-black">
         <div>
           <img src="/Logo.png" alt="logo" className="w-10 h-10" />
         </div>
@@ -29,7 +29,7 @@ function Navbar() {
           </select>
         </div>
       </div>
-      <div className="flex pt-10 gap-14 font-bold w-11/12 ml-16 justify-center items-center text-black">
+      <div className="hidden md:flex pt-10 gap-6 font-bold justify-center items-center text-black">
         <button className="cursor-pointer">SHOP</button>
         <button className="cursor-pointer">SKILLS</button>
         <button className="cursor-pointer">STORIES</button>

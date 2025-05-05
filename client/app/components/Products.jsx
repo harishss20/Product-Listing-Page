@@ -2,7 +2,7 @@ import React from "react";
 
 function Products() {
   return (
-    <aside className="w-64 p-4 ml-20 mt-8">
+    <aside className="w-full md:w-64 p-4 mt-8 md:ml-20">
       <label className="flex items-center font-bold text-sm uppercase">
         <input type="checkbox" className="mr-2" />
         CUSTOMIZABLE
